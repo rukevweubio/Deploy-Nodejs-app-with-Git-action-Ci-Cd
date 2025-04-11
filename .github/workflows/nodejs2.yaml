@@ -16,7 +16,7 @@ jobs:
 
       # Step 2: Debugging - List files
       - name: List files
-        run: ls -la
+        run: ls -la |find -type -d -name "solar-system" | cd "solar-system" 
 
       # Step 3: Navigate to solar-system and install dependencies
       - name: Install dependencies
