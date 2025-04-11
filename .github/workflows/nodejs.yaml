@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: '18'
 
+          
+      - name: list all the file 
+        run: ls -la 
+
       - name: Install dependencies
         run: |
           cd ~/solar-system
