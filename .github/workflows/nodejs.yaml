@@ -24,12 +24,16 @@ jobs:
           npm install
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd solar-system
+          npm test
 
       - name: Build the app
-        run: npm run build
+        run: |
+          cd solar-system
+          npm run build
 
       - name: Deploy the app
         run: |
+          cd solar-system
           echo "Deploying the app..."
-         
