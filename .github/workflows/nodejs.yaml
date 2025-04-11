@@ -1,0 +1,33 @@
+name: deploy nodejs app
+
+on:
+  push:
+    branches:
+      - main
+      - "feature/*"
+
+jobs:
+  deploy-nodejs-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build the app
+        run: npm run build
+
+      - name: Deploy the app
+        run: |
+          echo "Deploying the app..."
+         
