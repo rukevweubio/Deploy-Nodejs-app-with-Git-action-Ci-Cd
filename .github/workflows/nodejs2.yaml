@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Debugging - List files
+      - name: List files
+        run: ls -la
+
+      # Step 3: Navigate to solar-system and install dependencies
+      - name: Install dependencies
+        run: cd solar-system && npm install
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: cd solar-system && npm test
