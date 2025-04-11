@@ -20,17 +20,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd solar-system
+          cd ./solar-system
           npm install
 
       - name: Run tests
         run: |
-          cd solar-system
+          cd ./solar-system
           npm test
 
       - name: Build the app
         run: |
-          cd solar-system
+          cd ./solar-system
           npm run build
 
       - name: Deploy the app
